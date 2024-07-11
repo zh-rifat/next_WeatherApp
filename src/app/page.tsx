@@ -9,16 +9,19 @@ import { BiSearch } from "react-icons/bi";
 import { MdGpsFixed } from "react-icons/md";
 import weatherdata from '../data/weather.json';
 import Forecast from "@/components/Forecast";
+import Spinner from "@/components/Spinner";
 export default function Home() {
 
   const [city, setCity] = useState("dhaka");
   const [weatherData, setWeatherData] = useState<WeatherResponse|null>(null);
   const [forcastData, setForcastData] = useState<ForecastResponse|null>(null);
-
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleCityUpdate=async()=>{
+    setLoading(true);
     setWeatherData(await getWeatherByLocationService(city));
     setForcastData(await getForecastByLocationService(city));
+    setLoading(false);
   }
   const handleKeyDown = (e:any) => {
     if (e.key === 'Enter') {
@@ -35,8 +38,10 @@ export default function Home() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         const { latitude, longitude } = position.coords;
+        setLoading(true);
         setWeatherData(await getWeatherByCoordinatesService(latitude, longitude));
         setForcastData(await getForecastByCoordinatesService(latitude, longitude));
+        setLoading(false);
       }, (error) => {
         console.log(error);
       });
@@ -59,6 +64,13 @@ export default function Home() {
   console.log(weatherData);
   return (
     <main className="flex min-h-screen flex-col lg:flex-row bg-slate-900 p-5 md:p-10 justify-center items-center ">
+      {loading && (
+        <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-50 flex justify-center items-center">
+          <Spinner loading={loading} color="#fff"/>
+
+        </div>
+      )}
+
       <section className="h-full flex flex-col items-between weather lg:w-1/2 w-full flex-grow">
         <div className="search-bar flex flex-row my-6">
           <input type="text" placeholder="Search for city" 
