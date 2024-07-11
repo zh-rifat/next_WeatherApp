@@ -56,7 +56,7 @@ const Forecast = ({data}: Props) => {
   }, {});
   return (
     <div className="flex flex-col gap-2 px-3 mt-4 w-full">
-        <h1 className="text-slate-400 text-3xl font-bold my-6">5 Days Forecast</h1>
+        <h1 className="text-slate-400 text-3xl font-bold my-6">Weather Forecast</h1>
         <div className=" overflow-y-scroll  rounded-md  border border-slate-400 max-h-[700px] scrollbar-hide">
         
         {Object.entries(groupedData).map(([date, items]) => (
