@@ -19,8 +19,8 @@ const TimeDate=({}: Props)=> {
   },[time])
   return (
     <div>
-      <h3 className='text-gray-400'>{time}</h3>
-      <h3 className='text-gray-400'>{date}</h3>
+      <h3 className='text-gray-400 md:text-lg text-sm'>{time}</h3>
+      <h3 className='text-gray-400 md:text-lg text-sm'>{date}</h3>
     </div>
   )
 }

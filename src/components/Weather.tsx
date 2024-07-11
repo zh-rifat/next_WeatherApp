@@ -48,11 +48,11 @@ const Weather = ({data}: Props) => {
   ];
   return (
     <>
-      <div className='bg-slate-950 p-10 py-20 rounded-md text-gray-300 flex flex-row items-center'>
+      <div className='bg-slate-950 md:p-10 p-5 py-20 rounded-md text-gray-300 flex flex-row items-center'>
         <div>
-          <h1 className='text-5xl font-bold'>{data?.name}, {data?.sys.country}</h1>
+          <h1 className='text-3xl md:text-5xl font-bold'>{data?.name}, {data?.sys.country}</h1>
           <h3 className='text-xl text-gray-400'>{data?.weather[0].main}</h3>
-          <h2 className='text-4xl font-bold mt-16'>{data?.main.temp}&deg;C</h2> 
+          <h2 className='text-2xl md:text-4xl font-bold mt-16'>{data?.main.temp}&deg;C</h2> 
           <div className='mt-6'/>
           <TimeDate/>
         </div>
