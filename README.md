@@ -36,9 +36,7 @@ To setup the project, you need to have the following installed on your machine:
 
 - [Next.js](https://nextjs.org/)
 - [React.js](https://reactjs.org/)
-- [Node.js](https://nodejs.org/en/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Firebase](https://firebase.google.com/)
 - [openweathermap](https://openweathermap.org/)
 - [axios](https://axios-http.com/)
 - [react-icons](https://react-icons.github.io/react-icons/)

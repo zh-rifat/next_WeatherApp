@@ -58,7 +58,7 @@ export default function Home() {
   // if(!weatherData)return null;
   console.log(weatherData);
   return (
-    <main className="flex min-h-screen flex-col lg:flex-row bg-slate-900 p-10 justify-center items-center ">
+    <main className="flex min-h-screen flex-col lg:flex-row bg-slate-900 p-5 md:p-10 justify-center items-center ">
       <section className="h-full flex flex-col items-between weather lg:w-1/2 w-full flex-grow">
         <div className="search-bar flex flex-row my-6">
           <input type="text" placeholder="Search for city" 
